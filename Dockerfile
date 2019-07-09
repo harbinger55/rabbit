@@ -1,3 +1,3 @@
-FROM ubuntu:18.04
+FROM alpine
 COPY ./rabbit /rabbit
 CMD /rabbit
