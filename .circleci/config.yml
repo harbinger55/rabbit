@@ -22,7 +22,7 @@ jobs:
     steps:
       - docker/check
       - docker/build:
-          image: harbinger56/rabbit
+          image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
 
 
 workflows:
