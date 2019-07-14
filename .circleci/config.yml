@@ -19,7 +19,9 @@ jobs:
 
   docker_build_and_push:
     executor: docker/machine
+    working_directory: /go/src/github.com/harbinger55/rabbit
     steps:
+      - checkout
       - docker/check
       - docker/build:
           image: harbinger55/$CIRCLE_PROJECT_REPONAME
