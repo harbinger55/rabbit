@@ -10,10 +10,3 @@ jobs:
     steps:
       - checkout
       - run: go build
-
-# workflows:
-#   # Name the workflow "Welcome"
-#   rabbit:
-#     # Run the welcome/run job in its own container
-#     jobs:
-#       - build
