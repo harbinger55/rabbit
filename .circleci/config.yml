@@ -8,7 +8,7 @@ orbs:
 
 
 jobs:
-  build:
+  test_and_build:
     docker: 
       - image: circleci/golang:1.12
     working_directory: /go/src/github.com/harbinger55/rabbit
@@ -16,13 +16,19 @@ jobs:
         - checkout
         - run: go test
         - run: go build
-        - run: docker build -t harbinger56/rabbit:0.0.3 .
-        - run: docker push harbinger56/rabbit
 
+  docker_build_and_push:
+    executor: docker/machine
+    steps:
+      - docker/check
+      - docker/build:
+          image: harbinger55/$CIRCLE_PROJECT_REPONAME
 
 
 workflows:
   version: 2
   build_and_test:
     jobs:
-      - build
+      - test_and_build
+      - docker_build_and_push
+
