@@ -5,8 +5,8 @@ version: 2.1
 jobs:
   docker:
     - image: circleci/golang:1.12
-  build:
   working_directory: /go/src/github.com/harbinger55/rabbit
+  
   steps:
     - checkout
     - run: go build
