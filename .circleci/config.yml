@@ -6,14 +6,16 @@ orbs:
   docker: circleci/docker@0.5.3
 
 
+
+jobs:
+  build:
+    working_directory: /go/src/github.com/harbinger55/rabbit
+    steps:
+        - checkout
+        - run: go test
+
+
+
 workflows:
   "rabbit":
-    jobs:
-      build:
-        working_directory: /go/src/github.com/harbinger55/rabbit
-        steps:
-          - checkout
-          - run: go test
-
-
-
+    - build
