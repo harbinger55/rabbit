@@ -6,14 +6,14 @@ orbs:
 
 workflows:
   "rabbit":
-    # jobs:
+    jobs:
     #   docker:
     #     - image: circleci/golang:1.12
     #   working_directory: /go/src/github.com/harbinger55/rabbit
       
-      steps:
-        - checkout
-        - run: go build
+      # steps:
+      - checkout
+      - run: go build
 
 # version: 2.1
 # orbs:
