@@ -10,8 +10,10 @@ workflows:
   "rabbit":
     jobs:
       build:
-        - checkout
-        - run: go test
+        working_directory: /go/src/github.com/harbinger55/rabbit
+        steps:
+          - checkout
+          - run: go test
 
 
 
