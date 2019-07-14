@@ -3,6 +3,8 @@ version: 2.1
 
 orbs:
   golang: cci-orb/golang@0.1.1
+  docker: circleci/docker@0.5.3
+
 
 workflows:
   "rabbit":
@@ -12,7 +14,7 @@ workflows:
     #   working_directory: /go/src/github.com/harbinger55/rabbit
       
       # steps:
-      - checkout
+      - go test
 
 
 
