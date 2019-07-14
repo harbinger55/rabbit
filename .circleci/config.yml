@@ -14,7 +14,8 @@ workflows:
       # steps:
       - checkout
       - run: 
-        - go build
+        name: build
+        command: go build
 
 # version: 2.1
 # orbs:
