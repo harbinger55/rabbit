@@ -17,14 +17,14 @@ jobs:
         - run: go test
         - run: go build
 
-  docker_build_and_push:
-    executor: docker/machine
-    steps:
-      - checkout
-      - run: go build
-      - docker/check
-      - docker/build:
-          image: harbinger56/rabbit
+  # docker_build_and_push:
+  #   executor: docker/machine
+  #   steps:
+  #     - checkout
+  #     - run: go build
+  #     - docker/check
+  #     - docker/build:
+  #         image: harbinger56/rabbit
 
 
 workflows:
@@ -32,5 +32,6 @@ workflows:
   build_and_test:
     jobs:
       - test_and_build
-      - docker_build_and_push
-
+      - docker/publish:
+          deploy: false
+          image: harbinger56/rabbit
