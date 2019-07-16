@@ -1,3 +1,3 @@
 FROM alpine
-COPY ./rabbit /rabbit
+COPY rabbit /rabbit
 CMD /rabbit
