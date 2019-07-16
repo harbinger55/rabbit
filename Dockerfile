@@ -1,3 +1,3 @@
 FROM alpine
-COPY rabbit /rabbit
+COPY project /rabbit
 CMD /rabbit
