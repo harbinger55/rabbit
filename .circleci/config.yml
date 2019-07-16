@@ -24,7 +24,7 @@ jobs:
       - run: go build
       - docker/check
       - docker/build:
-          image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
+          image: harbinger56/rabbit
 
 
 workflows:
