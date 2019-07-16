@@ -26,13 +26,15 @@ jobs:
       - docker/build:
           image: harbinger56/rabbit
 
-    lint:
-      executor: docker/machine
-      steps:
-        - checkout
-        - docker/dockerlint:
-            dockerfile: /go/src/github.com/harbinger55/rabbit/Dockerfile
-            treat-warnings-as-errors: true
+  lint:
+    executor: docker/machine
+    steps:
+      - checkout
+      - docker/dockerlint:
+          dockerfile: /go/src/github.com/harbinger55/rabbit/Dockerfile
+          treat-warnings-as-errors: true
+
+
 workflows:
   version: 2
   build_and_test:
