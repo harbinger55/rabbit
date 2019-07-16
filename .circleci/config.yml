@@ -24,15 +24,8 @@ jobs:
       - docker/check
       - run: go build
       - docker/build:
-          image: harbinger56/rabbit
+          image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
 
-  lint:
-    executor: docker/machine
-    steps:
-      - checkout
-      - docker/dockerlint:
-          dockerfile: /go/src/github.com/harbinger55/rabbit/Dockerfile
-          treat-warnings-as-errors: true
 
 
 workflows:
@@ -40,6 +33,5 @@ workflows:
   build_and_test:
     jobs:
       - test_and_build
-      - lint
       - docker_build_and_push
 
