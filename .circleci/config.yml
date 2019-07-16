@@ -19,6 +19,7 @@ jobs:
 
   docker_build_and_push:
     executor: docker/machine
+    working_directory: rabbit
     steps:
       - checkout
       - docker/check
