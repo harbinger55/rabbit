@@ -16,6 +16,7 @@ jobs:
         - checkout
         - run: go test
         - run: go build
+# test comment
 
   docker_build_and_push:
     executor: docker/machine
